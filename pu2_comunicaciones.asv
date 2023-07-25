@@ -27,21 +27,14 @@ stemCompleto([-fs/2 fs/2 0 abs(max(X_BP))+10], 'f [KHz]', 'Amplitud', 'Espectro 
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
-%% -
-theta=7*pi/4;
+%% MODULACION (z1[n])
+theta=pi/2;
 yd=(cos(2*pi*fp1*n*Ts + theta))';
 z1=y1.*yd;
 stemCompleto([0 n(end) -1  1], 'n', 'Amplitud', 'z1[n]', 20, 'b.',0.5, n, z1);
 
 [Z1,Z1_shift,~]=fft_kit(z1,fs);
 stemCompleto([-fs/2 fs/2 0 (max(abs(Z1))*1.1)], 'f [KHz]', 'Amplitud', '|Z1[k]|', 20, 'r.', 0.5, f, abs(Z1_shift));
-xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
-xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
-
-% save('./filtros/filtroLP_8k.mat','LP');
-load('./filtros/filtroLP_8k.mat');
-x1=filter(LP,z1);
-sound(x1,fs);
 
 
