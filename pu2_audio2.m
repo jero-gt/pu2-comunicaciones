@@ -5,7 +5,7 @@ clc; close all; clearvars;
 %% CREACIÓN DE VARIABLES
 [x, fs] = audioread('DBL.wav');
 
-fp=8e3;
+fp=16e3;
 Ts=1/fs;
 n=0:length(x)-1;
 
@@ -41,13 +41,3 @@ xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 % save('./filtros/filtroLP_8k.mat','LP');
 load('./filtros/filtroLP_8k.mat');
 x1=filter(LP,z1);
-
-
-
-
-
-
-
-
-
-
