@@ -1,4 +1,4 @@
-function [X, X_shift, f] = fft_kit(x,fs)
+function [X_shift, f] = fft_kit(x,fs)
     X=fft(x);
    
     N=length(X);
