@@ -9,7 +9,7 @@ Este proyecto tiene como objetivo realizar el análisis en frecuencia de señale
 
 ## Requisitos Previos
 
-- MATLAB (compatible con fdatool) instalado en tu computadora.
+- MATLAB ( version compatible con fdatool).
 
 ## Estructura del Proyecto
 
