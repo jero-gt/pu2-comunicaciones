@@ -9,7 +9,7 @@ function plot_comp_theta(opcion,titulo,vector, fp, n, Ts, y)
             subplot(fil,col,i)
             yd = (cos(2*pi*fp*n*Ts + vector(i)))';
             z = y.*yd;
-            plot(n.*Ts, z);
+            plot(n, z);
             grid on;
             set(gca,'FontSize', 12); % Tama~no de letra para la leyenda y ejes.
             title("\alpha = (" + vector(i)/pi + ")\cdot\pi", 'FontWeight', 'normal');
