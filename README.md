@@ -1,7 +1,7 @@
 # Práctica con Utilitario 2 - Opción D: Comunicaciones
 Proyecto de Análisis de Encefalograma y Electrocardiograma en Frecuencia
 
-![Imagen de encabezado](ruta_de_la_imagen.png)
+![Imagen de encabezado](./encabezado.jpg)
 
 ## Descripción del Proyecto
 
@@ -11,24 +11,30 @@ Este proyecto tiene como objetivo realizar el análisis en frecuencia de señale
 
 - MATLAB ( version compatible con fdatool).
 
-## Estructura del Proyecto
+## Estructura del Proyecto:
 
 El repositorio está organizado de la siguiente manera:
 
 ```
 pu2-comunicaciones/
 │
-├── filtros/
-│   ├── filtroBP_8-13.fda
-│   ├── filtroBP_8-13.mat
-│   ├── filtroBS-49-53.fda
-│   ├── filtroBS-49-53.mat
-│   ├── filtroLP-100.fda
-│   └── filtroLP-100.mat
+├── Archivos_PU2d/
+│   └── DBL.wav
+├── filtros_audio1/
+│   ├── filtroBP_4k-12k.fda
+│   ├── filtroBP_4k-12k.mat
+│   ├── filtroLP_8k.fda
+│   └── filtroLP_8k.mat
+├── filtros_audio2/
+│   ├── filtroBP_12k-20k.fda
+│   ├── filtroBP_12k-20k.mat
+│   ├── filtroLP_8k.fda
+│   └── filtroLP_8k.mat
 ├── funciones/
-│   └── funciones/
-├── pu2_bio_senales.m
-├── pu2_eeg.m
+│   ├── utilidades/
+│   └── plot_comp_theta.m
+├── pu2_audio1.m
+├── pu2_audio2.m
 └── README.md
 ```
 
