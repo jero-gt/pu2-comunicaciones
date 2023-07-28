@@ -1,9 +1,10 @@
-%TP UTILITARIO 2 - COMUNICACIONES
+%% TP UTILITARIO 2 - COMUNICACIONES - AUDIO 2
 addpath(genpath('.'));
 clc; close all; clearvars;
 
 %% CREACIÓN DE VARIABLES
 [x, fs] = audioread('DBL.wav');
+
 fp=16e3;
 Ts=1/fs;
 n=0:length(x)-1;
@@ -29,6 +30,7 @@ theta = 0;
 yd = (cos(2*pi*fp*n*Ts + theta))';
 z = y.*yd;
 plotCompleto([0 n(end)./fs -1  1], 't[s]', '', 'DBL.wav modulada _{(fp = 16KHz)}', 20, 'b',0.5, n./fs, z);
+
 Z_s = fft_kit(z,fs);
 stemCompleto([-fs/2 fs/2 0 (max(abs(Z_s))*1.1)], 'f [KHz]', '', 'DBL.wav modulada _{(fp = 16KHz)}', 20, 'r.', 0.5, f, abs(Z_s));
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
@@ -51,4 +53,4 @@ stemCompleto([-fs/2 fs/2 0 (max(abs(X2_s))*1.1)], 'f [KHz]', '', '|X_2[k]|', 20,
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
-%sound(x,fs);
+sound(x2,fs);
