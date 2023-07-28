@@ -11,7 +11,7 @@ Este proyecto tiene como objetivo realizar el análisis en frecuencia de señale
 
 - MATLAB ( version compatible con fdatool).
 
-## Estructura del Proyecto
+## Estructura del Proyecto:
 
 El repositorio está organizado de la siguiente manera:
 
