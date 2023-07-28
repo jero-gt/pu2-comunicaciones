@@ -2,7 +2,7 @@
 addpath(genpath('.'));
 clc; close all; clearvars;
 
-%% CREACIÓN DE VARIABLES
+%% CREACIÃ“N DE VARIABLES
 [x, fs] = audioread('DBL.wav');
 fp=16e3;
 Ts=1/fs;
@@ -10,7 +10,7 @@ n=0:length(x)-1;
 
 %% ESTUDIO DEL ESPECTRO
 [X_s,f] = fft_kit(x,fs);
-stemCompleto([-fs/2 fs/2 0 abs(max(X_s))+10], 'f [KHz]', 'Amplitud', 'Espectro de la señal DBL.wav', 20, 'r.', 0.5, f, abs(X_s));
+stemCompleto([-fs/2 fs/2 0 abs(max(X_s))+10], 'f [KHz]', 'Amplitud', 'Espectro de la seÃ±al DBL.wav', 20, 'r.', 0.5, f, abs(X_s));
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
@@ -24,8 +24,8 @@ stemCompleto([-fs/2 fs/2 0 abs(max(X_BP_s))+10], 'f [KHz]', 'Amplitud', 'Espectr
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
-%% MODULACIÓN AUDIO 2
-theta = 0;
+%% MODULACIÃ“N AUDIO 2
+theta = pi/3;
 yd = (cos(2*pi*fp*n*Ts + theta))';
 z = y.*yd;
 
