@@ -16,11 +16,8 @@ Este proyecto tiene como objetivo realizar el análisis en frecuencia de señale
 El repositorio está organizado de la siguiente manera:
 
 ```
-pu2/
-├── datos/
-│   ├── ecg.mat
-│   ├── ecg_contaminada.mat
-│   └── eeg.mat
+pu2-comunicaciones/
+│
 ├── filtros/
 │   ├── filtroBP_8-13.fda
 │   ├── filtroBP_8-13.mat
