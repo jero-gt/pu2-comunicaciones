@@ -28,17 +28,24 @@ xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 theta = 0;
 yd = (cos(2*pi*fp*n*Ts + theta))';
 z = y.*yd;
+stemCompleto([0 n(end) -1  1], 'n', 'Amplitud', 'z[n]', 20, 'b.',0.5, n, z);
+Z_s = fft_kit(z,fs);
+stemCompleto([-fs/2 fs/2 0 (max(abs(Z_s))*1.1)], 'f [KHz]', 'Amplitud', '|Z[k]|', 20, 'r.', 0.5, f, abs(Z_s));
+xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
+xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
+%% Theta variable.
+%Definimos funcion "plot_comp_theta" para poder graficar lo calculado en la
+%seccion anterior para distintos valores de theta
 thetas_pos = [0, pi/2, pi, 3/2*pi];
 
 plot_comp_theta(1,"y[n]|_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 plot_comp_theta(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
-%Z_s = fft_kit(z,fs);
-%stemCompleto([-fs/2 fs/2 0 (max(abs(Z_s))*1.1)], 'f [KHz]', 'Amplitud', '|Z[k]|', 20, 'r.', 0.5, f, abs(Z_s));
-%xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
-%xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
-%%
+%% Filtro Pasabajos final.
 % save('./filtros_audio2/filtroLP_8k.mat','LP');
 load('./filtros_audio2/filtroLP_8k.mat');
-x=filter(LP,z);
+x2=filter(LP,z);
+X2_s = fft_kit(x,fs);
+stemCompleto([-fs/2 fs/2 0 (max(abs(X2_s))*1.1)], 'f [KHz]', 'Amplitud', '|X_2[k]|', 20, 'r.', 0.5, f, abs(X2_s));
+
 %sound(x,fs);
