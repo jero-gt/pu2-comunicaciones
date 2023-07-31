@@ -2,7 +2,7 @@
 addpath(genpath('.'));
 clc; close all; clearvars;
 
-%% CREACI”N DE VARIABLES
+%% CREACI√ìN DE VARIABLES
 [x, fs] = audioread('DBL.wav');
 
 fp=8e3;
@@ -11,14 +11,14 @@ n=0:length(x)-1;
 
 %% ESTUDIO DEL ESPECTRO
 [X_s,f] = fft_kit(x,fs);
-stemCompleto([-fs/2 fs/2 0 abs(max(X_s))+10], 'f [KHz]', '', 'Espectro de la seÒal DBL.wav', 20, 'r.', 0.5, f, abs(X_s));
+stemCompleto([-fs/2 fs/2 0 abs(max(X_s))+10], 'f [KHz]', '', 'Espectro de la se√±al DBL.wav', 20, 'r.', 0.5, f, abs(X_s));
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
 %% FILTRO PASABANDA (x1[n])
 load('./filtros_audio1/filtroBP_4k-12k.mat');
 plotFiltros(BP, f, fs, [-fs/2 fs/2 0 1.5], "Filtro PB 4KHz-12KHz")
-xticks([-12e3, -8e3, -4e3, 0, 4e3, 8e3, 12e3]);xticklabels({'-12', '-8','-4', '0', '4', '8', '12'});xlabel("f[KHz]");
+xticks([-12e3, -8e3, -4e3, 0, 4e3, 8e3, 12e3]);xticklabels({'-12', '-8', , '-4', '0','4', '8', '12'});xlabel("f[KHz]");
 
 y=filter(BP,x);
 plotCompleto([0 n(end)./fs -1  1], 't[s]', '', 'DBL.wav filtrada (PB 4kHz-12kHz)', 20, 'b',0.5, n./fs, y);
@@ -28,7 +28,7 @@ stemCompleto([-fs/2 fs/2 0 abs(max(X_BP_s))+10], 'f [KHz]', '', 'Espectro filtra
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
-%% MODULACI”N AUDIO 1
+%% MODULACI√ìN AUDIO 1
 theta = pi/2;
 yd = (cos(2*pi*fp*n*Ts + theta))';
 z = y.*yd;
@@ -44,7 +44,7 @@ xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 %seccion anterior para distintos valores de theta
 thetas_pos = [0, pi/2, pi, 3/2*pi];
 
-%PARA VERSIONES DE MATLAB 2018A O M¡S ACTUALES
+%PARA VERSIONES DE MATLAB 2018A O M√ÅS ACTUALES
 plot_comp_theta(1,"y[n]|_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 plot_comp_theta(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 
