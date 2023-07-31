@@ -17,6 +17,7 @@ xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
 %% FILTRO PASABANDA (x1[n])
 load('./filtros_audio1/filtroBP_4k-12k.mat');
+plotFiltros(BP, f, fs, [-fs/2 fs/2 0 1.5], "Filtro PB 4KHz-12KHz")
 y=filter(BP,x);
 plotCompleto([0 n(end)./fs -1  1], 't[s]', '', 'DBL.wav filtrada (PB 4kHz-12kHz)', 20, 'b',0.5, n./fs, y);
 
@@ -47,6 +48,10 @@ plot_comp_theta(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 %% Filtro Pasabajos final.
 % save('./filtros/filtroLP_8k.mat','LP');
 load('./filtros_audio1/filtroLP_8k.mat');
+plotFiltros(LP, f, fs, [-fs/2 fs/2 0 1.5], 'Filtro LP 8KHz')
+xticks([-22.05e3, -8e3, 0, 8e3, 22.05e3]);xticklabels({'-22.05', '-8', '0', '8', '22.05'});xlabel("f[KHz]");
+
+
 x1=filter(LP,z);
 
 X1_s = fft_kit(x1,fs);
