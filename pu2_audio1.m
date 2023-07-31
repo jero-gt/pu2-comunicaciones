@@ -42,8 +42,14 @@ xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 %seccion anterior para distintos valores de theta
 thetas_pos = [0, pi/2, pi, 3/2*pi];
 
+%PARA VERSIONES DE MATLAB 2018A O MÁS ACTUALES
 plot_comp_theta(1,"y[n]|_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 plot_comp_theta(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
+
+
+%PARA VERSIONES DE MATLAB 2017 O PREVIAS
+% plot_comp_theta_2017(1,"y[n]|_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
+% plot_comp_theta_2017(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 
 %% Filtro Pasabajos final.
 % save('./filtros/filtroLP_8k.mat','LP');
