@@ -1,8 +1,9 @@
-function plot_comp_theta(opcion,titulo,vector, fp, n, Ts, y)
+function plot_comp_theta_2017(opcion,titulo,vector, fp, n, Ts, y)
     fil=2;
     col=2;
     figure('units','normalized','outerposition',[0 0 1 1],'Name', titulo, 'NumberTitle', 'off');
-    sgtitle(titulo, 'FontWeight', 'bold');
+    aux_titulo = suptitle(titulo);
+    set(aux_titulo,'FontWeight', 'bold');
     set(gca,'FontSize', 20); % Tama~no de letra para la leyenda y ejes.
     if opcion == 1
         for i = 1:(length(vector))
