@@ -1,7 +1,7 @@
 # Práctica con Utilitario 2 - Opción D: Comunicaciones
 Proyecto de Análisis de Encefalograma y Electrocardiograma en Frecuencia
 
-![Imagen de encabezado](./encabezado.jpg)
+![Imagen de encabezado](./figuras/encabezado.jpg)
 
 ## Descripción del Proyecto
 
