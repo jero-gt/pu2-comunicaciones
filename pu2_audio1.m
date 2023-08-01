@@ -54,7 +54,6 @@ plot_comp_theta(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 % plot_comp_theta_2017(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 
 %% Filtro Pasabajos final.
-% save('./filtros/filtroLP_8k.mat','LP');
 load('./filtros_audio1/filtroLP_8k.mat');
 plotFiltros(LP, f, fs, [-fs/2 fs/2 0 1.5], 'Filtro LP 8KHz')
 xticks([-22.05e3, -8e3, 0, 8e3, 22.05e3]);xticklabels({'-22.05', '-8', '0', '8', '22.05'});xlabel("f[KHz]");
@@ -67,4 +66,5 @@ stemCompleto([-fs/2 fs/2 0 (max(abs(X1_s))*1.1)], 'f [KHz]', '', '|X_1[k]|', 20,
 xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
-sound(x1,fs);
+%DESCOMENTAR PARA ESCUCHAR EL AUDIO
+% sound(x1,fs);

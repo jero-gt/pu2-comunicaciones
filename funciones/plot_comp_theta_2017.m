@@ -11,7 +11,7 @@ function plot_comp_theta_2017(opcion,titulo,vector, fp, n, Ts, y)
             yd = (cos(2*pi*fp*n*Ts + vector(i)))';
             z = y.*yd;
             plot(n.*Ts, z);
-            grid on;
+            %grid on;
             set(gca,'FontSize', 12); % Tama~no de letra para la leyenda y ejes.
             title("\alpha = (" + vector(i)/pi + ")\cdot\pi", 'FontWeight', 'normal');
         end
@@ -26,7 +26,7 @@ function plot_comp_theta_2017(opcion,titulo,vector, fp, n, Ts, y)
             axis([-1/(2*Ts) 1/(2*Ts) 0 (max(abs(Z_s))*1.1)]);
             xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
             xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
-            grid on;
+            %grid on;
             set(gca,'FontSize', 12); % Tama~no de letra para la leyenda y ejes.
             title("\alpha = (" + vector(i)/pi + ")\cdot\pi", 'FontWeight', 'normal');
         end
