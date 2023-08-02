@@ -60,7 +60,7 @@ xticks([-22.05e3, -8e3, 0, 8e3, 22.05e3]);xticklabels({'-22.05', '-8', '0', '8',
 
 
 x1=filter(LP,z);
-plotCompleto([0 n(end)./fs -0.5 0.5], 't[s]', '', 'audio1', 20, 'b',0.5, n./fs, x1);
+plotCompleto([0 n(end)./fs -0.5 0.5], 't[s]', '', 'Cortázar lee a Cortázar: ¿Viajes¿', 20, 'b',0.5, n./fs, x1);
 
 X1_s = fft_kit(x1,fs);
 stemCompleto([-fs/2 fs/2 0 (max(abs(X1_s))*1.1)], 'f [KHz]', '', '|X_1[k]|', 20, 'r.', 0.5, f, abs(X1_s));
