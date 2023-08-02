@@ -59,7 +59,7 @@ plot_comp_theta(2,"|Z[k]| |_{\theta = \alpha}",thetas_pos, fp, n, Ts, y);
 load('./filtros_audio2/filtroLP_8k.mat');
 x2=filter(LP,z);
 
-plotFiltros(LP, f, fs, [-22.05e3 22.05e3 0 1.2], 'Filtro LP 8k');
+plotFiltros(LP, f, fs, [-22.05e3 22.05e3 0 1.2], 'Filtro LP 8 kHz');
 xticks([-22.05e3, -8e3, 0, 8e3, 22.05e3]);xticklabels({'-22.05', '-8', '0', '8', '22.05'});xlabel("f[KHz]");
 
 X2_s = fft_kit(x2,fs);
