@@ -38,9 +38,9 @@ pu2-comunicaciones/
 └── README.md
 ```
 
-- **datos/**: En esta carpeta se almacenan los archivos .mat que contienen las señales de encefalograma y electrocardiograma utilizados en el análisis.
+- **Archivos_PU2d/**: En esta carpeta se almacenan los archivos .mat que contienen las señales de encefalograma y electrocardiograma utilizados en el análisis.
 
-- **filtros/**: Esta carpeta contiene los filtros realizados con la herramienta fdatool de MATLAB y sus correspondientes sesiones que los generan.
+- **filtros_audiox/**: Esta carpeta contiene los filtros realizados con la herramienta fdatool de MATLAB y sus correspondientes sesiones que los generan.
 
 - **funciones/**: Esta carpeta contiene diversas herrmientas creadas en MATLAB por los autores para trabajar de forma mas comoda a lo largo de los scripts principales.
 
