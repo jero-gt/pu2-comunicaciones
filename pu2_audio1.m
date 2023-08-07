@@ -69,4 +69,4 @@ xticks([-22050, -16000, -8000, 0, 8000, 16000, 22050]);
 xticklabels({'-22.05', '-16', '-8', '0', '8', '16', '22.05'})
 
 %DESCOMENTAR PARA ESCUCHAR EL AUDIO
-% sound(x1,fs);
+sound(x1,fs);
