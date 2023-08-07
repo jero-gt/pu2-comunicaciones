@@ -49,7 +49,7 @@ pu2-comunicaciones/
 1. Clona este repositorio en tu máquina local:
 
    ```
-   git clone https://gitlab.com/jerogt/pu2-salud.git
+   git clone https://gitlab.com/jerogt/pu2-comunicaciones.git
    ```
 
 3. Ejecuta los scripts de MATLAB ubicados en el directorio principal para evitar errores de ejecución.
